@@ -32,7 +32,7 @@ def sieve(n: int) -> list:
                 sieve[i] = False
     primes = []
     for i in range(1, n):
-        if sieve[i] == True:
+        if sieve[i]:
             primes.append(i)
     return primes
 
@@ -45,3 +45,22 @@ def divisors(n: int) -> list:
         if (n % i == 0):
             divs.extend([i, n / i])
     return list(set(map(int, divs)))
+
+def is_palindromic(input_num: int) -> bool:
+    """
+    Determine whether the input number is palindromix
+    """
+    if (reverse_digits(input_num) == input_num):
+        return True
+    else:
+        return False
+
+def reverse_digits(num: int) -> int:
+    """
+    Reverse the digits of the input number
+    """
+    rev_num = 0
+    while (num > 0):
+        rev_num = rev_num * 10 + num % 10
+        num = num // 10
+    return rev_num
