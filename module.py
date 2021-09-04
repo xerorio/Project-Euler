@@ -34,6 +34,7 @@ def sieve(n: int) -> list:
     for i in range(1, n):
         if sieve[i]:
             primes.append(i)
+    primes.remove(1)
     return primes
 
 def divisors(n: int) -> list:
