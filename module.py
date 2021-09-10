@@ -65,3 +65,12 @@ def reverse_digits(num: int) -> int:
         rev_num = rev_num * 10 + num % 10
         num = num // 10
     return rev_num
+
+def bin_is_palindrome(num: int) -> bool:
+    """
+    Check if the binary equivalent base 10 integer is palindromic
+    """
+    binary = bin(num)
+    binary = binary[2:]
+
+    return binary == binary[-1::-1]
