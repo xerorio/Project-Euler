@@ -21,9 +21,9 @@ def fibonacci(n: int) -> list:
         fibonacci.append(next_num)
     return fibonacci
 
-def sieve(n: int) -> list:
+def sieve(m: int, n: int) -> list:
     """
-    Uses the Sieve of Eratosthenes to calculate prime numbers up to n (non-inclusive)
+    Uses the Sieve of Eratosthenes to calculate prime numbers from m up to n (non-inclusive)
     """
     sieve = [True] * n
     for p in range(2, n):
@@ -31,10 +31,13 @@ def sieve(n: int) -> list:
             for i in range(p*p, n, p):
                 sieve[i] = False
     primes = []
-    for i in range(1, n):
+    for i in range(m, n):
         if sieve[i]:
             primes.append(i)
-    primes.remove(1)
+    
+    if 1 in primes:
+        primes.remove(1)
+    
     return primes
 
 def divisors(n: int) -> list:
