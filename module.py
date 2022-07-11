@@ -1,7 +1,5 @@
 from math import sqrt
 
-# only started using this file as a module from problem 23 onwards
-
 def is_prime(n: int) -> bool:
     """
     Calculates whether the given number is prime (True) or not (False)

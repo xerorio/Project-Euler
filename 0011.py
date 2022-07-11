@@ -52,7 +52,7 @@ grid = [
 
 def calc_horizontal() -> int:
     largest_product = 0
-    for i in range(0, 17):
+    for i in range(17):
         for row in grid:
             product = row[i] * row[i + 1] * row[i + 2] * row[i + 3]
             if (product > largest_product):
@@ -61,8 +61,8 @@ def calc_horizontal() -> int:
 
 def calc_vertical() -> int:
     largest_product = 0
-    for i in range(0, 20):
-        for j in range(0, 17):
+    for i in range(20):
+        for j in range(17):
             col1 = grid[j]
             col2 = grid[j + 1]
             col3 = grid[j + 2]
@@ -74,8 +74,8 @@ def calc_vertical() -> int:
 
 def calc_diagonal() -> int:
     largest_product = 0
-    for i in range(0, 17):
-        for j in range(0, 17):
+    for i in range(17):
+        for j in range(17):
             col1 = grid[j]
             col2 = grid[j + 1]
             col3 = grid[j + 2]
