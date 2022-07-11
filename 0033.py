@@ -7,37 +7,4 @@
 # If the product of these four fractions is given in its lowest common terms,
 # find the value of the denominator.
 
-from fractions import Fraction
-
-product_p = 1
-product_q = 1
-
-for p in range(10, 100):
-    for q in range(10, 100):
-        reduced = float(p) / q
-        if reduced >= 1.0:
-            continue
-        reduced = Fraction(p, q)
-
-        pstr = str(p)
-        qstr = str(q)
-
-        for l in pstr:
-            if l == '0':
-                continue
-            if l in qstr:
-                rpstr = pstr.replace(l, '')
-                rqstr = qstr.replace(l, '')
-                if len(rpstr) == 0 or len(rqstr) == 0 or int(rqstr) == 0:
-                    continue
-                frac = Fraction(int(rpstr), int(rqstr))
-                if frac == reduced:
-                    print(f'{rpstr}/{rqstr} == {str(p)}/{str(q)}')
-                    product_p *= int(rpstr)
-                    product_q *= int(rqstr)
-
-product = Fraction(product_p, product_q)
-
-print(product)
-
-# Answer: 100
+# Answer: 

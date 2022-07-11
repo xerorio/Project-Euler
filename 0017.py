@@ -7,18 +7,4 @@
 # 23 letters and 115 (one hundred and fifteen) contains 20 letters.
 # The use of "and" when writing out numbers is in compliance with British usage.
 
-from num2words import num2words
-
-sum_of_letters = 0
-
-for i in range(1, 1001):
-    num_as_word = num2words(i)
-    if ('-' in num_as_word):
-        num_as_word = num_as_word.replace('-', '')
-    if (' ' in num_as_word):
-        num_as_word = num_as_word.replace(' ', '')
-    sum_of_letters += len(num_as_word)
-
-print(sum_of_letters)
-
-# Answer: 21124
+# Answer: 

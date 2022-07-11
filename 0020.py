@@ -4,13 +4,4 @@
 
 # Find the sum of the digits in the number 100!
 
-from math import factorial
-
-one_hundred_factorial = factorial(100)
-sum = 0
-for i in str(one_hundred_factorial):
-    sum += int(i)
-
-print(sum)
-
 # Answer: 

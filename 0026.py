@@ -16,16 +16,4 @@
 # Find the value of d < 1000 for which 1/d contains the longest recurring cycle
 # in its decimal fraction part.
 
-import dvtDecimal as dD
-
-largest_recursion_length = 0
-denominator = 0
-
-for i in range(1, 1000):
-    if (dD.dvtDecimal(1, i).periodLen() > largest_recursion_length):
-        largest_recursion_length = dD.dvtDecimal(1, i).periodLen()
-        denominator = i
-
-print(denominator)
-
-# Answer: 983
+# Answer: 

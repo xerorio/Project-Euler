@@ -9,21 +9,4 @@
 # What is the largest 1 to 9 pandigital 9-digit number that can be formed as the
 # concatenated product of an integer with (1,2, ... , n) where n > 1?
 
-largest = 0
-
-for i in range(1, 10000):
-	multiplication = ''
-	integer = 1
-
-	while len(multiplication) < 9:
-		multiplication += str(i * integer)
-		integer += 1
-    
-	if ((len(multiplication) == 9) and (len(set(multiplication)) == 9) and ('0' not in multiplication)):
-	
-		if int(multiplication) > largest:
-			largest = int(multiplication)
-
-print(largest)
-
-# Answer: 932718654
+# Answer: 

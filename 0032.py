@@ -8,24 +8,4 @@
 # HINT: Some products can be obtained in more than one way so be sure to only include it once
 # in your sum.
 
-from itertools import permutations
-
-perms = permutations('123456789')
-permset = set()
-pandigital_products = set()
-
-for perm in perms:
-    permset.add(''.join(perm))
-
-first = range(1, 1000)
-second = range(1, 10000)
-
-for i in first:
-    print(f'i = {i}')
-    for j in second:
-        if (f'{str(i*j)}{i}{j}' in permset):
-            pandigital_products.add(i * j)
-
-print(sum(pandigital_products))
-
-# Answer: 45228
+# Answer: 

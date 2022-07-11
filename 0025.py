@@ -19,16 +19,4 @@
 
 # What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
-from module import fibonacci
-
-fibonacci_seq = fibonacci(5000)
-
-# check that last number has at least 1000 digits
-longest_num = fibonacci_seq[len(fibonacci_seq)-1]
-
-for num in fibonacci_seq:
-    if (len(str(num)) >= 1000):
-        print(fibonacci_seq.index(num) + 1)
-        break
-
-# Answer: 4782
+# Answer: 

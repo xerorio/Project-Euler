@@ -11,29 +11,4 @@
 # Which starting number, under one million, produces the longest chain?
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
-def collatz_sequence(start_number: int) -> list:
-    sequence = [start_number]
-    next_number = start_number
-
-    while sequence[len(sequence) - 1] != 1:
-        if (next_number % 2 == 0):
-            sequence.append(int(next_number / 2))
-            next_number = int(next_number / 2)
-        else:
-            sequence.append((next_number * 3) + 1)
-            next_number = (next_number * 3) + 1
-
-    return sequence
-
-most_terms = 0
-start_number = 0
-
-for i in range(1000000, 50000, -1):
-    if (len(collatz_sequence(i)) > most_terms):
-        most_terms = len(collatz_sequence(i))
-        start_number = i
-
-print(most_terms)
-print(start_number)
-
-# Answer: 837799
+# Answer: 

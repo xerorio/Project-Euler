@@ -18,24 +18,4 @@
 # 27, 29, (31), 33, 35, (37), 39, 41, (43), 45, 47, (49)
 # bracketed are numbers along the diagonals
 
-largest_number = 1001 * 1001
-
-odd_numbers = list(range(1, largest_number + 1, 2))
-
-# iterator index
-i = 0
-
-# gap for every four iterations
-gap = 1
-
-solution = 1
-
-while odd_numbers[i] != largest_number:
-    for j in range(4):
-        i += gap
-        solution += odd_numbers[i]
-    gap += 1
-
-print(solution)
-
-# Answer: 669171001
+# Answer: 

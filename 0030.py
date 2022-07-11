@@ -12,19 +12,4 @@
 
 # maximum sum of the number has to be 5 * (10 - 1)^5
 
-max_number = 5*(9**5)
-valid_numbers = []
-total = 0
-
-for number in range(10, max_number + 1): 
-    sum = 0
-    for i in str(number):
-        sum += int(i)**5
-    if (sum == number):
-        valid_numbers.append(number)
-        total += number
-
-print(valid_numbers)
-print(total)
-
-# Answer: 443839
+# Answer: 
