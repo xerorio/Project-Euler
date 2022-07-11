@@ -11,4 +11,25 @@
 # Which starting number, under one million, produces the longest chain?
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
-# Answer: 
+def generate_sequence(x):
+    sequence = [x]
+
+    while x != 1:
+        if x % 2 == 0:
+            x /= 2
+        else:
+            x *= 3
+            x += 1
+        sequence.append(int(x))
+    
+    return sequence
+
+longest_chain = 0
+chain_got_longer = []
+for i in range(70000, 1000000):
+    if len(generate_sequence(i)) > longest_chain:
+        longest_chain = len(generate_sequence(i))
+        print(i)
+
+# It's a bit slow and not too sure how to optimise
+# Answer: 837799
