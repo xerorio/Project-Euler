@@ -43,13 +43,13 @@ def sieve(m: int, n: int) -> list:
 
 def divisors(n: int) -> list:
     """
-    Returns all the divisors of a given integer (non-inclusive)
+    Returns all the divisors of a given integer (inclusive)
     """
-    divs = [1]
+    divs = [1, n]
     for i in range(2, int(sqrt(n)) + 1):
-        if (n % i == 0):
+        if (n % i == 0) and i not in divs and (n / i) not in divs:
             divs.extend([i, n / i])
-    return list(set(map(int, divs)))
+    return list(set(divs))
 
 def is_palindromic(input_num: int) -> bool:
     """
