@@ -16,12 +16,11 @@
 
 from module import divisors
 
-triangular_numbers = []
 next_num = 0
 for i in range(1, 15000):
-    next_num += i
-    if len(divisors(next_num)) > 100:
+    next_num += i    
+    if len(divisors(next_num)) > 500:
         print(next_num)
-    triangular_numbers.append(next_num)
+        break
 
 # Answer: 76576500

@@ -49,7 +49,7 @@ def divisors(n: int) -> list:
     for i in range(2, int(sqrt(n)) + 1):
         if (n % i == 0) and i not in divs and (n / i) not in divs:
             divs.extend([i, n / i])
-    return list(set(divs))
+    return divs
 
 def is_palindromic(input_num: int) -> bool:
     """

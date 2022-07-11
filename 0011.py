@@ -30,8 +30,7 @@
 
 grid = []
 with open('0011.txt', 'r') as f:
-    lines = f.readlines()
-    for line in lines:
+    for line in f.readlines():
         grid.append(line.strip().split(' '))
 
 def calc_horizontal() -> int:
