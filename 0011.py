@@ -63,11 +63,11 @@ def calc_vertical() -> int:
     largest_product = 0
     for i in range(20):
         for j in range(17):
-            col1 = grid[j]
-            col2 = grid[j + 1]
-            col3 = grid[j + 2]
-            col4 = grid[j + 3]
-            product = col1[i] * col2[i] * col3[i] * col4[i]
+            row1 = grid[j]
+            row2 = grid[j + 1]
+            row3 = grid[j + 2]
+            row4 = grid[j + 3]
+            product = row1[i] * row2[i] * row3[i] * row4[i]
             if (product > largest_product):
                 largest_product = product
     return largest_product
@@ -75,6 +75,7 @@ def calc_vertical() -> int:
 def calc_diagonal() -> int:
     largest_product = 0
     for i in range(17):
+        # leading diagonals
         for j in range(17):
             col1 = grid[j]
             col2 = grid[j + 1]
@@ -83,10 +84,19 @@ def calc_diagonal() -> int:
             product = col1[i] * col2[i + 1] * col3[i + 2] * col4[i + 3]
             if (product > largest_product):
                 largest_product = product
+        # other diagonals
+        for j in range(3, 20):
+            col1 = grid[j]
+            col2 = grid[j - 1]
+            col3 = grid[j - 2]
+            col4 = grid[j - 3]
+            product = col1[i] * col2[i + 1] * col3[i + 2] * col4[i + 3]
+            if (product > largest_product):
+                largest_product = product
     return largest_product
 
 largest_products = [calc_horizontal(), calc_vertical(), calc_diagonal()]
 
-print(max(largest_products))
+print(largest_products)
 
 # Answer: 70600674
