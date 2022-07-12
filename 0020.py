@@ -4,4 +4,16 @@
 
 # Find the sum of the digits in the number 100!
 
+from module import split_word
+
+product = 1
+for i in range(2, 100):
+    product *= i
+
+total = 0
+for x in list(filter(lambda n: int(n) != 0, split_word(str(product)))):
+    total += int(x)
+
+print(total)
+
 # Answer: 
