@@ -51,15 +51,12 @@ def calculate_length(n: str) -> int:
             if split(n)[1] != '0':
                 ones_num = split(n)[1]
                 length = len(f'{dictionary[tens_num]}{dictionary[ones_num]}')
-                print(f'{dictionary[tens_num]}{dictionary[ones_num]}')
             else:
                 length = len(f'{dictionary[tens_num]}')
     elif len(n) == 3:
         if n[-2:] != '00':
-            if int(n[-2:]) < 10:
-                length = len(dictionary[n[2]])
-            elif 10 <= int(n[-2:]) < 20:
-                length = len(dictionary[n[-2:]])
+            if int(n[-2:]) < 20:
+                length = len(dictionary[str(int(n[-2:]))])
             else:
                 tens_num = f'{split(n)[1]}0'
                 if split(n)[2] != '0':
