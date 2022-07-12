@@ -25,7 +25,6 @@ def generate_sequence(x):
     return sequence
 
 longest_chain = 0
-chain_got_longer = []
 for i in range(70000, 1000000):
     if len(generate_sequence(i)) > longest_chain:
         longest_chain = len(generate_sequence(i))
