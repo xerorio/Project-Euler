@@ -1,5 +1,8 @@
 from math import sqrt
 
+def split_word(word: str) -> list:
+    return [c for c in word]
+
 def is_prime(n: int) -> bool:
     """
     Calculates whether the given number is prime (True) or not (False)
