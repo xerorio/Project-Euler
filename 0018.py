@@ -23,4 +23,21 @@
 # However, Problem 67, is the same challenge with a triangle containing one-hundred rows;
 # it cannot be solved by brute force, and requires a clever method! ;o)
 
-# Answer: 
+triangle = []
+with open('0018.txt', 'r') as f:
+    for line in f.readlines():
+        triangle.append([int(c) for c in line.strip().split(' ')])
+
+initial_size = len(triangle)
+
+for i in range(initial_size - 1):
+    last_row = triangle[-1:][0]
+    triangle.pop()
+    for j in range(len(triangle[-1:][0])):
+        two_options = [last_row[j], last_row[j + 1]]
+        triangle[-1:][0][j] += max(two_options)
+    for r in triangle:
+        print(r)
+    print()
+
+# Answer: 1074
