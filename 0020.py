@@ -16,4 +16,4 @@ for x in list(filter(lambda n: int(n) != 0, split_word(str(product)))):
 
 print(total)
 
-# Answer: 
+# Answer: 648
