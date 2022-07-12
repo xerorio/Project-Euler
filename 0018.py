@@ -36,8 +36,7 @@ for i in range(initial_size - 1):
     for j in range(len(triangle[-1:][0])):
         two_options = [last_row[j], last_row[j + 1]]
         triangle[-1:][0][j] += max(two_options)
-    for r in triangle:
-        print(r)
-    print()
+
+print(triangle[0][0])
 
 # Answer: 1074
