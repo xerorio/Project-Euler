@@ -8,11 +8,6 @@
 # it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-# determine all abundant numbers
-# sort the list
-# list all the sums
-# find the numbers up to 28123 that are not in the list of sums
-
 from module import divisors_n
 
 abundant_nums = []
@@ -21,12 +16,11 @@ for i in range(1, 28123):
         abundant_nums.append(i)
 
 abundant_num_sums = [0]*28124
-for x in range (0, len(abundant_nums)):
-    for y in range (x, len(abundant_nums)):
-        sum_2_abundant_nums = abundant_nums[x]+abundant_nums[y]
-        if (sum_2_abundant_nums<= 28123):
-            if (abundant_num_sums[sum_2_abundant_nums] == 0):
-                abundant_num_sums[sum_2_abundant_nums] = 1
+for x in range(0, len(abundant_nums)):
+    for y in range(x, len(abundant_nums)):
+        sum_2_abundant_nums = abundant_nums[x] + abundant_nums[y]
+        if (sum_2_abundant_nums <= 28123 and abundant_num_sums[sum_2_abundant_nums] == 0):
+            abundant_num_sums[sum_2_abundant_nums] = 1
 
 total = 0
 for i in range(len(abundant_num_sums)):
