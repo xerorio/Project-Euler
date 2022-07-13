@@ -11,6 +11,23 @@
 # Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
 # Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 
+def cycle_length(denominator):
+    numerator = 1
+    remainders = []
+    while len(remainders) == len(set(remainders)):
+        print(remainders)
+        remainder = numerator % denominator
+        remainders.append(remainder)
+        numerator = remainder * 10
+    return len(set(remainders))
 
+# max_denominator = 0
+# counter = 0
+# for i in range(2, 1000):
+#     if cycle_length(i) > counter:
+#         counter = cycle_length(i)
+#         max_denominator = i
+# print(max_denominator)
+cycle_length(982)
 
-# Answer: 
+# Answer: 983
