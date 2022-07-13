@@ -6,7 +6,7 @@
 # What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
 from itertools import permutations
-perms = [int(str(''.join(c for c in n))) for n in list(permutations('0123456789'))]
+perms = [int(''.join(c for c in n)) for n in list(permutations('0123456789'))]
 print(sorted(perms)[999999])
 
 # Answer: 2783915460
