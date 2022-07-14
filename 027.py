@@ -27,14 +27,13 @@ for x in primes_up_to_one_thousand:
         # positive 'a' and positive 'b'
         while True:
             quadratic = (n * (n + x)) + y
-            if quadratic not in primes:
-                if is_prime(quadratic):
-                    primes.append(quadratic)
-                else:
-                    if n - 1 > largest:
-                        largest = (n - 1)
-                        xy = x * y
-                    break
+            if is_prime(quadratic):
+                primes.append(quadratic)
+            else:
+                if n - 1 > largest:
+                    largest = (n - 1)
+                    xy = x * y
+                break
             n += 1
 
         n = 0
@@ -42,14 +41,13 @@ for x in primes_up_to_one_thousand:
         # negative 'a' and positive 'b'
         while True:
             quadratic = (n * (n - x)) + y
-            if quadratic not in primes:
-                if is_prime(quadratic) and quadratic > 0:
-                    primes.append(quadratic)
-                else:
-                    if n - 1 > largest:
-                        largest = n - 1
-                        xy = -1 * x * y
-                    break
+            if is_prime(quadratic) and quadratic > 0:
+                primes.append(quadratic)
+            else:
+                if n - 1 > largest:
+                    largest = n - 1
+                    xy = -1 * x * y
+                break
             n += 1
 
 print(xy)
