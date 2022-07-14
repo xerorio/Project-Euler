@@ -91,3 +91,10 @@ def bin_is_palindrome(num: int) -> bool:
     binary = binary[2:]
 
     return binary == binary[-1::-1]
+
+def gcd(a: int, b: int) -> int:
+    while b != 0:
+        t = b
+        b = a % b
+        a = t
+    return a
