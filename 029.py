@@ -20,4 +20,4 @@ print(len(terms))
 
 print(time() - start)
 
-# Answer: 
+# Answer: 9183
