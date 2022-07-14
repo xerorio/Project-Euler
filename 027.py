@@ -8,6 +8,52 @@
 # Find the product of the coefficients, a and b,
 # for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 
+from time import time
+from module import sieve, is_prime
 
+start = time()
 
-# Answer: 
+# find primes up to 1000 - these are possible values for b, since when n is 0, b must be prime
+primes_up_to_one_thousand = sieve(2, 1000)
+primes = primes_up_to_one_thousand.copy()
+
+xy = 0
+largest = 0
+
+for x in primes_up_to_one_thousand:
+    for y in primes_up_to_one_thousand:
+        n = 0
+
+        # positive 'a' and positive 'b'
+        while True:
+            quadratic = (n * (n + x)) + y
+            if quadratic not in primes:
+                if is_prime(quadratic):
+                    primes.append(quadratic)
+                else:
+                    if n - 1 > largest:
+                        largest = (n - 1)
+                        xy = x * y
+                    break
+            n += 1
+
+        n = 0
+
+        # negative 'a' and positive 'b'
+        while True:
+            quadratic = (n * (n - x)) + y
+            if quadratic not in primes:
+                if is_prime(quadratic) and quadratic > 0:
+                    primes.append(quadratic)
+                else:
+                    if n - 1 > largest:
+                        largest = n - 1
+                        xy = -1 * x * y
+                    break
+            n += 1
+
+print(xy)
+
+print(time() - start)
+
+# Answer: -59231
