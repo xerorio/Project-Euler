@@ -11,6 +11,7 @@
 from time import time
 start = time()
 
+# number of possibilites
 # 1: 200
 # 2: 100
 # 5: 40
@@ -35,7 +36,7 @@ for a in range(3):
                 for e in range( int(1 + ((200 - (100 * a) - (50 * b) - (20 * c) - (10 * d)) / 5)) ):
                     # 2p coins
                     for f in range( int(1 + ((200 - (100 * a) - (50 * b) - (20 * c) - (10 * d) - (5 * e)) / 2)) ):
-                        count += 1
+                        count += 1 # the rest are made by 1p coins
 
 print(count)
 
