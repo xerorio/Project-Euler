@@ -19,7 +19,6 @@ for i in range(2, 10000):
         concatenated_product += str(i * j)
         if '123456789' == ''.join(sorted(concatenated_product)) and int(concatenated_product) > largest_pandigital_number:
             largest_pandigital_number = int(concatenated_product)
-
 print(largest_pandigital_number)
 
 print(time() - start)
