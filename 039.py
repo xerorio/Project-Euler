@@ -13,13 +13,13 @@ for a in range(1, 500):
         if int(c) == c and a + b + c <= 1000:
             perimeters.append(a + b + c)
 
-largest_perimeter = 0
-most_perimeters = 0
-for i in range(10, 1000):
-    if perimeters.count(i) > most_perimeters:
-        largest_perimeter = i
-        most_perimeters = perimeters.count(i)
-print([largest_perimeter, most_perimeters])
+largest_p = 0
+most_p = 0
+for p in perimeters:
+    if perimeters.count(p) > most_p:
+        largest_p = p
+        most_p = perimeters.count(p)
+print([int(largest_p), most_p])
 
 print(time() - start)
 

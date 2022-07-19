@@ -111,3 +111,10 @@ def factorial(n: int) -> int:
     for i in range(2, n + 1):
         f *= i
     return f
+
+def is_pandigital(n: int, s = 9) -> bool:
+    """
+    Takes an integer and a length and determines whether the number is pandigital, default length is 9
+    """
+    n = str(n)
+    return len(n) == s and not '1234567890'[:s].strip(n)
