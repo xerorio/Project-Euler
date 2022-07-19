@@ -13,7 +13,6 @@ from module import is_pandigital, is_prime
 n = 7654321
 while not(is_pandigital(n, 7) and is_prime(n)):
     n -= 2
-
 print(n)
 
 print(time() - start)
