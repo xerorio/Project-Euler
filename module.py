@@ -32,15 +32,12 @@ def sieve(m: int, n: int) -> list:
     sieve = [True] * n
     for p in range(2, n):
         if sieve[p]:
-            for i in range(p*p, n, p):
+            for i in range(p * p, n, p):
                 sieve[i] = False
     primes = []
     for i in range(m, n):
         if sieve[i]:
             primes.append(i)
-    
-    if 1 in primes:
-        primes.remove(1)
     
     return primes
 
