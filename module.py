@@ -93,8 +93,22 @@ def bin_is_palindrome(num: int) -> bool:
     return binary == binary[-1::-1]
 
 def gcd(a: int, b: int) -> int:
+    """
+    Returns greatest common divisor of two input numbers
+    """
     while b != 0:
         t = b
         b = a % b
         a = t
     return a
+
+def factorial(n: int) -> int:
+    """
+    Applies factorial function to input number
+    """
+    if isinstance(n, int) is False:
+        print('Error: number is not an integer')
+    f = 1
+    for i in range(2, n + 1):
+        f *= i
+    return f

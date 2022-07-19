@@ -27,6 +27,7 @@ numerator = fractions[0][0] * fractions[1][0] * fractions[2][0] * fractions[3][0
 denominator = fractions[0][1] * fractions[1][1] * fractions[2][1] * fractions[3][1]
 
 print(denominator / gcd(numerator, denominator))
+
 print(time() - start)
 
 # Answer: 100
