@@ -6,14 +6,27 @@
 from time import time
 start = time()
 
-def rotate(n: int) -> list:
-    rotations = [n]
-    for i in range(len(str(n)) - 1):
-        rotations.append(int(f'{str(rotations[-1])[1:]}{str(rotations[-1])[0]}'))
-    return rotations
+from module import sieve, is_prime
 
-print(rotate(197))
+def rotate(n: int) -> list:
+    r = set()
+    for i in range(len(str(n))):
+        r.add(int(f'{str(n)[i:]}{str(n)[:i]}'))
+    return r
+
+circular_primes = []
+for n in sieve(2, 1000000):
+    counter = 0
+    if '0' not in str(n):
+        rotations = rotate(n)
+        for r in rotations:
+            if is_prime(r):
+                counter += 1
+        if counter == len(rotations):
+            circular_primes.append(n)
+
+print(len(circular_primes))
 
 print(time() - start)
 
-# Answer: 
+# Answer: 55

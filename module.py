@@ -64,15 +64,6 @@ def divisors_n(n: int) -> list:
             divs.extend([i, n / i])
     return divs
 
-def is_palindromic(input_num: int) -> bool:
-    """
-    Determine whether the input number is palindromix
-    """
-    if (reverse_digits(input_num) == input_num):
-        return True
-    else:
-        return False
-
 def reverse_digits(num: int) -> int:
     """
     Reverse the digits of the input number
@@ -83,13 +74,21 @@ def reverse_digits(num: int) -> int:
         num = num // 10
     return rev_num
 
+def is_palindromic(input_num: int) -> bool:
+    """
+    Determine whether the input number is palindromix
+    """
+    if (reverse_digits(input_num) == input_num):
+        return True
+    else:
+        return False
+
 def bin_is_palindrome(num: int) -> bool:
     """
     Check if the binary equivalent base 10 integer is palindromic
     """
     binary = bin(num)
     binary = binary[2:]
-
     return binary == binary[-1::-1]
 
 def gcd(a: int, b: int) -> int:
