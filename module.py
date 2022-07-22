@@ -1,5 +1,3 @@
-from math import sqrt
-
 def split_word(word: str) -> list:
     return [c for c in word]
 
@@ -56,26 +54,6 @@ def reverse_sieve(m: int, n: int) -> list:
             composites.append(i)
     
     return composites
-
-def divisors_i(n: int) -> list:
-    """
-    Returns all the divisors of a given integer (inclusive)
-    """
-    divs = [1, n]
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([i, n / i])
-    return divs
-
-def divisors_n(n: int) -> list:
-    """
-    Returns all the divisors of a given integer (non-inclusive)
-    """
-    divs = [1]
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([i, n / i])
-    return divs
 
 def reverse_digits(num: int) -> int:
     """
@@ -160,6 +138,28 @@ letters_to_numbers = {
     'Y': 25,
     'Z': 26
 }
+
+from math import sqrt
+
+def divisors_i(n: int) -> list:
+    """
+    Returns all the divisors of a given integer (inclusive)
+    """
+    divs = [1, n]
+    for i in range(2, int(sqrt(n)) + 1):
+        if (n % i == 0) and i not in divs and (n / i) not in divs:
+            divs.extend([i, n / i])
+    return divs
+
+def divisors_n(n: int) -> list:
+    """
+    Returns all the divisors of a given integer (non-inclusive)
+    """
+    divs = [1]
+    for i in range(2, int(sqrt(n)) + 1):
+        if (n % i == 0) and i not in divs and (n / i) not in divs:
+            divs.extend([i, n / i])
+    return divs
 
 def is_pentagonal(n: int) -> bool:
     """
