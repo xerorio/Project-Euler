@@ -12,11 +12,26 @@
 from time import time
 start = time()
 
+from math import sqrt
 from module import is_prime
+primes = []
 
-for n in range(1, 10000):
-    if is_prime(n) is False
+done = False
+n = 2
+while done is False:
+    if is_prime(n):
+        primes.append(n)
+    elif n % 2 == 1:
+        it_can = False
+        for p in primes:
+            square = sqrt((n - p) / 2)
+            if square == int(square):
+                it_can = True
+        if it_can is False:
+            print(n)
+            done = True
+    n += 1
 
 print(time() - start)
 
-# Answer:
+# Answer: 5777
