@@ -55,6 +55,26 @@ def reverse_sieve(m: int, n: int) -> list:
     
     return composites
 
+def divisors_i(n: int) -> list:
+    """
+    Returns all the divisors of a given integer (inclusive)
+    """
+    divs = [1, n]
+    for i in range(2, int(n ** 0.5) + 1):
+        if (n % i == 0) and i not in divs and (n / i) not in divs:
+            divs.extend([int(i), int(n / i)])
+    return divs
+
+def divisors_n(n: int) -> list:
+    """
+    Returns all the divisors of a given integer (non-inclusive)
+    """
+    divs = [1]
+    for i in range(2, int(n * 0.5) + 1):
+        if (n % i == 0) and i not in divs and (n / i) not in divs:
+            divs.extend([int(i), int(n / i)])
+    return divs
+
 def reverse_digits(num: int) -> int:
     """
     Reverse the digits of the input number
@@ -110,6 +130,38 @@ def is_pandigital(n: int, s = 9) -> bool:
     n = str(n)
     return len(n) == s and not '1234567890'[:s].strip(n)
 
+def prime_factors(n: int) -> list:
+    """
+    Returns all the prime factors of a input number
+    """
+    factors = []
+    d = 2
+    while n > 1:
+        while n % d == 0:
+            factors.append(int(d))
+            n /= d
+        d = d + 1
+        if (d * d) > n:
+            if n > 1: factors.append(int(n))
+            break
+    return factors
+
+def is_pentagonal(n: int) -> bool:
+    """
+    Determines if input number is pentagonal
+    """
+    # Get positive root of equation P(n) = n.
+    a = (1 + ((24 * n + 1) ** 0.5)) / 6
+    return(a == int(a))
+
+def is_hexagonal(n: int) -> bool:
+    """
+    Determines if input number is hexagonal
+    """
+    # Get positive root of equation H(n) = n.
+    a = (1 + ((8 * n + 1) ** 0.5)) / 4
+    return(a == int(a))
+
 letters_to_numbers = {
     'A': 1,
     'B': 2,
@@ -138,41 +190,3 @@ letters_to_numbers = {
     'Y': 25,
     'Z': 26
 }
-
-from math import sqrt
-
-def divisors_i(n: int) -> list:
-    """
-    Returns all the divisors of a given integer (inclusive)
-    """
-    divs = [1, n]
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([i, n / i])
-    return divs
-
-def divisors_n(n: int) -> list:
-    """
-    Returns all the divisors of a given integer (non-inclusive)
-    """
-    divs = [1]
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([i, n / i])
-    return divs
-
-def is_pentagonal(n: int) -> bool:
-    """
-    Determines if input number is pentagonal
-    """
-    # Get positive root of equation P(n) = n.
-    a = (1 + sqrt(24 * n + 1)) / 6
-    return(a == int(a))
-
-def is_hexagonal(n: int) -> bool:
-    """
-    Determines if input number is hexagonal
-    """
-    # Get positive root of equation H(n) = n.
-    a = (1 + sqrt(8 * n + 1)) / 4
-    return(a == int(a))
