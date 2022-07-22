@@ -41,6 +41,22 @@ def sieve(m: int, n: int) -> list:
     
     return primes
 
+def reverse_sieve(m: int, n: int) -> list:
+    """
+    Uses the Sieve of Eratosthenes to calculate composite numbers from m up to n (non-inclusive)
+    """
+    sieve = [True] * n
+    for p in range(2, n):
+        if sieve[p]:
+            for i in range(p * p, n, p):
+                sieve[i] = False
+    composites = []
+    for i in range(m, n):
+        if sieve[i] is False:
+            composites.append(i)
+    
+    return composites
+
 def divisors_i(n: int) -> list:
     """
     Returns all the divisors of a given integer (inclusive)
@@ -115,3 +131,48 @@ def is_pandigital(n: int, s = 9) -> bool:
     """
     n = str(n)
     return len(n) == s and not '1234567890'[:s].strip(n)
+
+letters_to_numbers = {
+    'A': 1,
+    'B': 2,
+    'C': 3,
+    'D': 4,
+    'E': 5,
+    'F': 6,
+    'G': 7,
+    'H': 8,
+    'I': 9,
+    'J': 10,
+    'K': 11,
+    'L': 12,
+    'M': 13,
+    'N': 14,
+    'O': 15,
+    'P': 16,
+    'Q': 17,
+    'R': 18,
+    'S': 19,
+    'T': 20,
+    'U': 21,
+    'V': 22,
+    'W': 23,
+    'X': 24,
+    'Y': 25,
+    'Z': 26
+}
+
+def is_pentagonal(n: int) -> bool:
+    """
+    Determines if input number is pentagonal
+    """
+    # Get positive root of equation P(n) = n.
+    a = (1 + sqrt(24 * n + 1)) / 6
+    return(a == int(a))
+
+def is_hexagonal(n: int) -> bool:
+    """
+    Determines if input number is hexagonal
+    """
+    # Get positive root of equation H(n) = n.
+    a = (1 + sqrt(8 * n + 1)) / 4
+    return(a == int(a))
