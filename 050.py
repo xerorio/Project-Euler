@@ -8,8 +8,24 @@
 from time import time
 start = time()
 
+from module import sieve, is_prime
+primes = sieve(2, 10000)
 
+fin_seq = []
+l = len(primes)
+j = l
+while j != 0:
+    i = 0
+    while i + j < l + 1:
+        seq = primes[i:i + j]
+        if sum(seq) <= 1_000_000:
+            if is_prime(sum(seq)):
+                if len(seq) > len(fin_seq):
+                    fin_seq = seq
+        i += 1
+    j -= 1
+print(sum(fin_seq))
 
 print(time() - start)
 
-# Answer: 
+# Answer: 997651
