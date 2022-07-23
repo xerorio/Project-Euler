@@ -121,6 +121,8 @@ def factorial(n: int) -> int:
     """
     if isinstance(n, int) is False:
         print('Error: number is not an integer')
+    if n == 0:
+        return 1
     f = 1
     for i in range(2, n + 1):
         f *= i
@@ -164,6 +166,14 @@ def is_hexagonal(n: int) -> bool:
     # Get positive root of equation H(n) = n.
     a = (1 + ((8 * n + 1) ** 0.5)) / 4
     return(a == int(a))
+
+def choose(n: int, r: int) -> int:
+    """
+    Applies the choose function to input numbers, assuming n >= r
+    """
+    if n < r:
+        return 0
+    return int(factorial(n) / (factorial(r) * factorial(n - r)))
 
 letters_to_numbers = {
     'A': 1,
