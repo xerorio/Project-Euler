@@ -19,4 +19,4 @@ print(counter)
 
 print(time() - start)
 
-# Answer: 
+# Answer: 4075
