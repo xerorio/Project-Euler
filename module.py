@@ -11,7 +11,7 @@ def is_prime(n: int) -> bool:
     if n == 2 or n == 3:
         return True
 
-    for i in range(3, int(abs(n)**0.5) + 1, 2):
+    for i in range(5, int(abs(n)**0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
