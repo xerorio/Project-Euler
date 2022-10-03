@@ -60,23 +60,31 @@ def reverse_sieve(m: int, n: int) -> list:
 
 def divisors_i(n: int) -> list:
     """
-    Returns all the divisors of a given integer (inclusive)
+    Returns divisors in numerical order of the given integer (inclusive)
+    Does not include duplicates
     """
     divs = [1, n]
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n * 0.5) + 1):
         if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([int(i), int(n / i)])
-    return divs
+            if int(i) == int(n / i):
+                divs.append(int(i))
+            else:
+                divs.extend([int(i), int(n / i)])
+    return sorted(divs)
 
 def divisors_n(n: int) -> list:
     """
-    Returns all the divisors of a given integer (non-inclusive)
+    Returns divisors in numerical order of the given integer (non-inclusive)
+    Does not include duplicates
     """
     divs = [1]
     for i in range(2, int(n * 0.5) + 1):
         if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([int(i), int(n / i)])
-    return divs
+            if int(i) == int(n / i):
+                divs.append(int(i))
+            else:
+                divs.extend([int(i), int(n / i)])
+    return sorted(divs)
 
 def reverse_digits(num: int) -> int:
     """
