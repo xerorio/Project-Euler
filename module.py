@@ -91,16 +91,16 @@ def reverse_digits(num: int) -> int:
     Reverse the digits of the input number
     """
     rev_num = 0
-    while (num > 0):
+    while num > 0:
         rev_num = rev_num * 10 + num % 10
         num = num // 10
     return rev_num
 
 def is_palindromic(input_num: int) -> bool:
     """
-    Determine whether the input number is palindromix
+    Determine whether the input number is palindromic
     """
-    if (reverse_digits(input_num) == input_num):
+    if reverse_digits(input_num) == input_num:
         return True
     else:
         return False
