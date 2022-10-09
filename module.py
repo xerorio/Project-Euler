@@ -183,6 +183,17 @@ def choose(n: int, r: int) -> int:
         return 0
     return int(factorial(n) / (factorial(r) * factorial(n - r)))
 
+def split_string(input_iterable: str, n: int) -> list:
+    """
+    Takes a string and returns the same iterable split into size 'n' sections
+    """
+    if n <= 1:
+        raise ValueError('Invalid size input')
+    if type(input_iterable) != str:
+        raise ValueError('Invalid iterable input')
+    return ' '.join([input_iterable[i:i + n] for i in range(0, len(input_iterable), n)])
+    
+
 letters_to_numbers = {
     'A': 1,
     'B': 2,
