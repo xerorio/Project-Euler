@@ -1,3 +1,4 @@
+# functions
 def split_word(word: str) -> list:
     return [c for c in word]
 
@@ -192,9 +193,9 @@ def split_string(input_iterable: str, n: int) -> list:
     if type(input_iterable) != str:
         raise ValueError('Invalid iterable input')
     return ' '.join([input_iterable[i:i + n] for i in range(0, len(input_iterable), n)])
-    
 
-letters_to_numbers = {
+# variables
+alphabet = {
     'A': 1,
     'B': 2,
     'C': 3,
