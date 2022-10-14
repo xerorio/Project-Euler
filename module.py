@@ -1,3 +1,4 @@
+# functions
 def split_word(word: str) -> list:
     return [c for c in word]
 
@@ -60,39 +61,47 @@ def reverse_sieve(m: int, n: int) -> list:
 
 def divisors_i(n: int) -> list:
     """
-    Returns all the divisors of a given integer (inclusive)
+    Returns divisors in numerical order of the given integer (inclusive)
+    Does not include duplicates
     """
     divs = [1, n]
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n * 0.5) + 1):
         if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([int(i), int(n / i)])
-    return divs
+            if int(i) == int(n / i):
+                divs.append(int(i))
+            else:
+                divs.extend([int(i), int(n / i)])
+    return sorted(divs)
 
 def divisors_n(n: int) -> list:
     """
-    Returns all the divisors of a given integer (non-inclusive)
+    Returns divisors in numerical order of the given integer (non-inclusive)
+    Does not include duplicates
     """
     divs = [1]
     for i in range(2, int(n * 0.5) + 1):
         if (n % i == 0) and i not in divs and (n / i) not in divs:
-            divs.extend([int(i), int(n / i)])
-    return divs
+            if int(i) == int(n / i):
+                divs.append(int(i))
+            else:
+                divs.extend([int(i), int(n / i)])
+    return sorted(divs)
 
 def reverse_digits(num: int) -> int:
     """
     Reverse the digits of the input number
     """
     rev_num = 0
-    while (num > 0):
+    while num > 0:
         rev_num = rev_num * 10 + num % 10
         num = num // 10
     return rev_num
 
 def is_palindromic(input_num: int) -> bool:
     """
-    Determine whether the input number is palindromix
+    Determine whether the input number is palindromic
     """
-    if (reverse_digits(input_num) == input_num):
+    if reverse_digits(input_num) == input_num:
         return True
     else:
         return False
@@ -103,7 +112,7 @@ def bin_is_palindrome(num: int) -> bool:
     """
     binary = bin(num)
     binary = binary[2:]
-    return binary == binary[-1::-1]
+    return binary == binary[::-1]
 
 def gcd(a: int, b: int) -> int:
     """
@@ -114,19 +123,6 @@ def gcd(a: int, b: int) -> int:
         b = a % b
         a = t
     return a
-
-def factorial(n: int) -> int:
-    """
-    Applies factorial function to input number
-    """
-    if isinstance(n, int) is False:
-        print('Error: number is not an integer')
-    if n == 0:
-        return 1
-    f = 1
-    for i in range(2, n + 1):
-        f *= i
-    return f
 
 def is_pandigital(n: int, s = 9) -> bool:
     """
@@ -175,7 +171,18 @@ def choose(n: int, r: int) -> int:
         return 0
     return int(factorial(n) / (factorial(r) * factorial(n - r)))
 
-letters_to_numbers = {
+def split_string(input_iterable: str, n: int) -> list:
+    """
+    Takes a string and returns the same iterable split into size 'n' sections
+    """
+    if n <= 1:
+        raise ValueError('Invalid size input')
+    if type(input_iterable) != str:
+        raise ValueError('Invalid iterable input')
+    return ' '.join([input_iterable[i:i + n] for i in range(0, len(input_iterable), n)])
+
+# variables
+alphabet = {
     'A': 1,
     'B': 2,
     'C': 3,
