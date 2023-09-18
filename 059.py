@@ -14,6 +14,7 @@
 # the key is repeated cyclically throughout the message.
 # The balance for this method is using a sufficiently long password key for security,
 # but short enough to be memorable.
+
 # Your task has been made easy, as the encryption key consists of three lower case characters.
 
 # Using p059_cipher.txt (right click and 'Save Link/Target As...'),
@@ -23,12 +24,11 @@
 from time import time
 start = time()
 
-cipher = [] # in 3 parts
-with open('059.txt', 'r') as f:
-    ascii_characters = [int(x) for x in f.read().strip().split(',')]
-    cipher.append(ascii_characters[i::3] for i in range(3))
+# cipher = [] # in 3 parts
+# with open('059.txt', 'r') as f:
+#     ascii_characters = [int(x) for x in f.read().strip().split(',')]
 
-print(ascii_characters)
+# print(ascii_characters)
 
 print(time() - start)
 

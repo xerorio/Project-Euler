@@ -147,11 +147,24 @@ def prime_factors(n: int) -> list:
             break
     return factors
 
+def is_triangle(n: int) -> bool:
+    """
+    Determines if input number is triangular
+    """
+    a = (((8 * n + 1) ** 0.5) - 1) / 2
+    return(a == int(a))
+
+def is_square(n: int) -> bool:
+    """
+    Determines if input number is square
+    """
+    a = (n ** 0.5)
+    return(a == int(a))
+
 def is_pentagonal(n: int) -> bool:
     """
     Determines if input number is pentagonal
     """
-    # Get positive root of equation P(n) = n.
     a = (1 + ((24 * n + 1) ** 0.5)) / 6
     return(a == int(a))
 
@@ -159,9 +172,29 @@ def is_hexagonal(n: int) -> bool:
     """
     Determines if input number is hexagonal
     """
-    # Get positive root of equation H(n) = n.
     a = (1 + ((8 * n + 1) ** 0.5)) / 4
     return(a == int(a))
+
+def is_heptagonal(n: int) -> bool:
+    """
+    Determines if input number is heptagonal
+    """
+    a = (3 + ((40 * n + 9) ** 0.5)) / 10
+    return(a == int(a))
+
+def is_octagonal(n: int) -> bool:
+    """
+    Determines if input number is octagonal
+    """
+    a = (1 + ((3 * n + 1) ** 0.5)) / 3
+    return(a == int(a))
+
+def factorial(n: int) -> int:
+    f = 1
+    while n > 1:
+        f *= n
+        n -= 1
+    return(f)
 
 def choose(n: int, r: int) -> int:
     """
