@@ -1,6 +1,13 @@
 # functions
-def split_word(word: str) -> list:
-    return [c for c in word]
+
+def remove_punctuation(input_string: str) -> str:
+    """
+    Removes punctuation from input string
+    """
+    from string import punctuation
+    input_string = input_string.replace(' ', '')
+    translator = str.maketrans('', '', punctuation)
+    return input_string.translate(translator)
 
 def is_prime(n: int) -> bool:
     """
