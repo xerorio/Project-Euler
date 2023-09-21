@@ -1,3 +1,7 @@
+"""
+A nice long script with loads of useful functions and variables
+"""
+
 # functions
 
 def remove_punctuation(input_string: str) -> str:
@@ -13,7 +17,7 @@ def is_prime(n: int) -> bool:
     """
     Calculates whether the given number is prime (True) or not (False)
     """
-    if n == 2 or n == 3:
+    if n in (2, 3):
         return True
 
     if n == 0 or n == 1 or n % 2 == 0 or n % 3 == 0:
@@ -28,42 +32,42 @@ def fibonacci(n: int) -> list:
     """
     Calculates the fibonacci sequence while its length is less than n
     """
-    fibonacci = [1, 1, 2]
-    while len(fibonacci) < n:
-        next_num = fibonacci[len(fibonacci)-1] + fibonacci[len(fibonacci)-2]
-        fibonacci.append(next_num)
-    return fibonacci
+    fibonacci_seq = [1, 1, 2]
+    while len(fibonacci_seq) < n:
+        next_num = fibonacci_seq[len(fibonacci_seq)-1] + fibonacci_seq[len(fibonacci_seq)-2]
+        fibonacci_seq.append(next_num)
+    return fibonacci_seq
 
 def sieve(m: int, n: int) -> list:
     """
     Uses the Sieve of Eratosthenes to calculate prime numbers from m up to n (non-inclusive)
     """
-    sieve = [True] * n
+    sieve_primes = [True] * n
     for p in range(2, n):
-        if sieve[p]:
+        if sieve_primes[p]:
             for i in range(p * p, n, p):
-                sieve[i] = False
+                sieve_primes[i] = False
     primes = []
     for i in range(m, n):
-        if sieve[i]:
+        if sieve_primes[i]:
             primes.append(i)
-    
+
     return primes
 
 def reverse_sieve(m: int, n: int) -> list:
     """
     Uses the Sieve of Eratosthenes to calculate composite numbers from m up to n (non-inclusive)
     """
-    sieve = [True] * n
+    sieve_primes = [True] * n
     for p in range(2, n):
-        if sieve[p]:
+        if sieve_primes[p]:
             for i in range(p * p, n, p):
-                sieve[i] = False
+                sieve_primes[i] = False
     composites = []
     for i in range(m, n):
-        if sieve[i] is False:
+        if sieve_primes[i] is False:
             composites.append(i)
-    
+
     return composites
 
 def divisors_i(n: int) -> list:
@@ -108,10 +112,7 @@ def is_palindromic(input_num: int) -> bool:
     """
     Determine whether the input number is palindromic
     """
-    if reverse_digits(input_num) == input_num:
-        return True
-    else:
-        return False
+    return reverse_digits(input_num) == input_num
 
 def bin_is_palindrome(num: int) -> bool:
     """
@@ -133,7 +134,8 @@ def gcd(a: int, b: int) -> int:
 
 def is_pandigital(n: int, s = 9) -> bool:
     """
-    Takes an integer and a length and determines whether the number is pandigital, default length is 9
+    Takes an integer and a length and determines
+    whether the number is pandigital, default length is 9
     """
     n = str(n)
     return len(n) == s and not '1234567890'[:s].strip(n)
@@ -150,7 +152,8 @@ def prime_factors(n: int) -> list:
             n /= d
         d = d + 1
         if (d * d) > n:
-            if n > 1: factors.append(int(n))
+            if n > 1:
+                factors.append(int(n))
             break
     return factors
 
@@ -159,49 +162,52 @@ def is_triangle(n: int) -> bool:
     Determines if input number is triangular
     """
     a = (((8 * n + 1) ** 0.5) - 1) / 2
-    return(a == int(a))
+    return a == int(a)
 
 def is_square(n: int) -> bool:
     """
     Determines if input number is square
     """
-    a = (n ** 0.5)
-    return(a == int(a))
+    a = n ** 0.5
+    return a == int(a)
 
 def is_pentagonal(n: int) -> bool:
     """
     Determines if input number is pentagonal
     """
     a = (1 + ((24 * n + 1) ** 0.5)) / 6
-    return(a == int(a))
+    return a == int(a)
 
 def is_hexagonal(n: int) -> bool:
     """
     Determines if input number is hexagonal
     """
     a = (1 + ((8 * n + 1) ** 0.5)) / 4
-    return(a == int(a))
+    return a == int(a)
 
 def is_heptagonal(n: int) -> bool:
     """
     Determines if input number is heptagonal
     """
     a = (3 + ((40 * n + 9) ** 0.5)) / 10
-    return(a == int(a))
+    return a == int(a)
 
 def is_octagonal(n: int) -> bool:
     """
     Determines if input number is octagonal
     """
     a = (1 + ((3 * n + 1) ** 0.5)) / 3
-    return(a == int(a))
+    return a == int(a)
 
 def factorial(n: int) -> int:
+    """
+    Returns the factorial of input number without math module
+    """
     f = 1
     while n > 1:
         f *= n
         n -= 1
-    return(f)
+    return f
 
 def choose(n: int, r: int) -> int:
     """
@@ -217,7 +223,7 @@ def split_string(input_iterable: str, n: int) -> list:
     """
     if n <= 1:
         raise ValueError('Invalid size input')
-    if type(input_iterable) != str:
+    if not isinstance(input_iterable, str):
         raise ValueError('Invalid iterable input')
     return ' '.join([input_iterable[i:i + n] for i in range(0, len(input_iterable), n)])
 
