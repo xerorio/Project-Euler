@@ -8,7 +8,7 @@
 from time import time
 start = time()
 
-from module import is_pentagonal
+from ..module import is_pentagonal
 
 pentagonal_numbers = [1, 5]
 not_finished = True

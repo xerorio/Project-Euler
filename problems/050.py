@@ -8,7 +8,7 @@
 from time import time
 start = time()
 
-from module import sieve, is_prime
+from ..module import sieve, is_prime
 primes = sieve(2, 10000)
 
 fin_seq = []

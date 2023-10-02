@@ -8,10 +8,8 @@ def remove_punctuation(input_string: str) -> str:
     """
     Removes punctuation from input string
     """
-    from string import punctuation
-    input_string = input_string.replace(' ', '')
-    translator = str.maketrans('', '', punctuation)
-    return input_string.translate(translator)
+    from re import findall
+    return ''.join(r"[^!,.?:;@'#~!£$%^&*()\"]+", input_string)
 
 def is_prime(n: int) -> bool:
     """

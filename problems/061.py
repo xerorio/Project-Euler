@@ -12,7 +12,7 @@
 from time import time
 start = time()
 
-from module import is_triangle, is_square, is_pentagonal, is_hexagonal, is_heptagonal, is_octagonal
+from ..module import is_triangle, is_square, is_pentagonal, is_hexagonal, is_heptagonal, is_octagonal
 
 print(time() - start)
 

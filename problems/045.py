@@ -8,7 +8,7 @@
 from time import time
 start = time()
 
-from module import is_pentagonal, is_hexagonal
+from ..module import is_pentagonal, is_hexagonal
 
 for i in range(286, 100000):
     tri_num = ((i * i) + i) / 2

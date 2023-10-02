@@ -6,7 +6,7 @@
 # Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
 
 from time import time
-from module import sieve, is_prime
+from ..module import sieve, is_prime
 import math
 start = time()
 

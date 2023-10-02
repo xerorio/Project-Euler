@@ -4,7 +4,7 @@
 
 # Find the sum of the digits in the number 100!
 
-from module import split_word
+from ..module import split_word
 
 product = 1
 for i in range(2, 100):

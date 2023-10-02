@@ -9,7 +9,7 @@
 from time import time
 start = time()
 
-from module import is_prime
+from ..module import is_prime
 for i in range(1488, 6671):
     j = i + 3330
     k = i + 6660

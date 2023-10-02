@@ -5,7 +5,7 @@
 from time import time
 start = time()
 
-from module import factorial
+from ..module import factorial
 
 curious_numbers = []
 for n in range(10, 50000):

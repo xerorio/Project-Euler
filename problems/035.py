@@ -6,7 +6,7 @@
 from time import time
 start = time()
 
-from module import sieve, is_prime
+from ..module import sieve, is_prime
 
 def rotate(n: int) -> list:
     r = set()

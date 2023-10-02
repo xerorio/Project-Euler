@@ -13,7 +13,7 @@ from time import time
 start = time()
 
 from math import sqrt
-from module import is_prime
+from ..module import is_prime
 primes = []
 
 done = False

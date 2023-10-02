@@ -8,7 +8,7 @@
 # it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-from module import divisors_n
+from ..module import divisors_n
 
 abundant_nums = []
 for i in range(1, 28123):

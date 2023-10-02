@@ -9,7 +9,7 @@
 # for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 
 from time import time
-from module import sieve, is_prime
+from ..module import sieve, is_prime
 
 start = time()
 

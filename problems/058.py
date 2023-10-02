@@ -19,7 +19,7 @@
 from time import time
 start = time()
 
-from module import is_prime
+from ..module import is_prime
 
 i = 1 # just an iterator
 gap = 2
