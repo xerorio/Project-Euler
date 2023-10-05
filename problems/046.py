@@ -13,7 +13,9 @@ from time import time
 start = time()
 
 from math import sqrt
-from ..module import is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_prime
 primes = []
 
 done = False

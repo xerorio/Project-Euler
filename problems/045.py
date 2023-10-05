@@ -8,7 +8,9 @@
 from time import time
 start = time()
 
-from ..module import is_pentagonal, is_hexagonal
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_pentagonal, is_hexagonal
 
 for i in range(286, 100000):
     tri_num = ((i * i) + i) / 2

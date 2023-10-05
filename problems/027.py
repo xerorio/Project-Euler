@@ -9,7 +9,9 @@
 # for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 
 from time import time
-from ..module import sieve, is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import sieve, is_prime
 
 start = time()
 

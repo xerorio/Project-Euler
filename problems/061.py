@@ -12,7 +12,42 @@
 from time import time
 start = time()
 
-from ..module import is_triangle, is_square, is_pentagonal, is_hexagonal, is_heptagonal, is_octagonal
+import sys
+sys.path.append('C:\\Code\\project-euler')
+from module import is_triangle, is_square, is_pentagonal, is_hexagonal, is_heptagonal, is_octagonal
+
+# generate all 4 digit polygonal numbers
+# find all four digit numbers that form a group of six cyclic numbers
+# for each group, they need a polygonal of each type
+
+polygonals = {
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+}
+
+cyclic_polygonals = {}
+
+for n in range(1000, 10000):
+    if is_triangle(n):
+        polygonals[3].append(n)
+        cyclic_polygonals[(3, n)] = []
+    if is_square(n):
+        polygonals[4].append(n)
+    if is_pentagonal(n):
+        polygonals[5].append(n)
+    if is_hexagonal(n):
+        polygonals[6].append(n)
+    if is_heptagonal(n):
+        polygonals[7].append(n)
+    if is_octagonal(n):
+        polygonals[8].append(n)
+
+print(polygonals)
+print(cyclic_polygonals)
 
 print(time() - start)
 

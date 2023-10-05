@@ -9,7 +9,9 @@
 from time import time
 start = time()
 
-from ..module import is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_prime
 for i in range(1488, 6671):
     j = i + 3330
     k = i + 6660

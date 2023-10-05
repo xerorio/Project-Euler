@@ -8,7 +8,9 @@
 from time import time
 start = time()
 
-from ..module import sieve, is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import sieve, is_prime
 primes = sieve(2, 10000)
 
 fin_seq = []

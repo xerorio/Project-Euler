@@ -5,7 +5,9 @@
 from time import time
 start = time()
 
-from ..module import factorial
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import factorial
 
 curious_numbers = []
 for n in range(10, 50000):

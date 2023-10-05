@@ -10,7 +10,9 @@
 from time import time
 start = time()
 
-from ..module import letters_to_numbers
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import letters_to_numbers
 
 words = []
 with open('042.txt', 'r') as f:

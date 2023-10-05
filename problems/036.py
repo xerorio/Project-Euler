@@ -5,7 +5,9 @@
 from time import time
 start = time()
 
-from ..module import is_palindromic, bin_is_palindrome
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_palindromic, bin_is_palindrome
 nice_numbers = set()
 for i in range(1, 1000000):
     if is_palindromic(i) and bin_is_palindrome(i):

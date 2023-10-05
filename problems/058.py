@@ -19,7 +19,9 @@
 from time import time
 start = time()
 
-from ..module import is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_prime
 
 i = 1 # just an iterator
 gap = 2

@@ -10,7 +10,9 @@
 from time import time
 start = time()
 
-from ..module import sieve
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import sieve
 primes = sieve(3, 1_000_000)
 
 wildcards = []

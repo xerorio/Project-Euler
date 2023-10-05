@@ -8,7 +8,9 @@
 from time import time
 start = time()
 
-from ..module import sieve, is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import sieve, is_prime
 interesting_primes = []
 for n in sieve(20, 750000):
     n1 = n

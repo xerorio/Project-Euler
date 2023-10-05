@@ -5,7 +5,9 @@
 # therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 # Evaluate the sum of all the amicable numbers under 10000.
 
-from ..module import divisors_n, sieve
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import divisors_n, sieve
 
 prime_nums = sieve(2, 10000)
 

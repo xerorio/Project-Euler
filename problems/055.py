@@ -22,7 +22,9 @@
 from time import time
 start = time()
 
-from ..module import reverse_digits, is_palindromic
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import reverse_digits, is_palindromic
 
 def is_lychrel(n):
     for i in range(50): # fifty iterations

@@ -8,7 +8,9 @@
 from time import time
 start = time()
 
-from ..module import gcd
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import gcd
 
 fractions = []
 for n in range(11, 100):

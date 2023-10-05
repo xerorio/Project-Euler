@@ -6,7 +6,9 @@
 from time import time
 start = time()
 
-from ..module import sieve, is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import sieve, is_prime
 
 def rotate(n: int) -> list:
     r = set()

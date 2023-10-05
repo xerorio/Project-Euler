@@ -8,7 +8,9 @@
 from time import time
 start = time()
 
-from ..module import choose
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import choose
 
 counter = 0
 for n in range(101):

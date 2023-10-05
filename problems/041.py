@@ -5,7 +5,9 @@
 from time import time
 start = time()
 
-from ..module import is_pandigital, is_prime
+import sys
+sys.path.append('C:\Code\project-euler')
+from module import is_pandigital, is_prime
 
 # sum of digits from 9 down to 1 is divisble by 3
 # sum of digits from 8 down to 1 is divisble by 3
