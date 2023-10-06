@@ -6,9 +6,12 @@ A nice long script with loads of useful functions and variables
 
 def remove_punctuation(input_string: str) -> str:
     """
-    Removes punctuation from input string
+    Removes punctuation from input string (re module required)
     """
-    from re import findall
+    try:
+        from re import findall
+    except:
+        return 'Unable to remove punctuation, re module required.'
     return ''.join(findall(r"[^!,.?:;@'#~!£$%^&*()\"-]+", input_string))
 
 def is_prime(n: int) -> bool:
