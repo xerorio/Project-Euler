@@ -4,7 +4,7 @@ A nice long script with loads of useful functions and variables
 
 # functions
 
-# change the color
+# changing terminal output color
 # import os
 # os.system('color')
 # \x1b[%sm {} \x1b[0m
