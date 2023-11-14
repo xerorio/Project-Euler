@@ -4,6 +4,17 @@ A nice long script with loads of useful functions and variables
 
 # functions
 
+# change the color
+# import os
+# os.system('color')
+# \x1b[%sm {} \x1b[0m
+
+def bold(input_string: str) -> str:
+    return f'\033[1m{input_string}\033[0m'
+
+def underline(input_string: str) -> str:
+    return f'\033[4m{input_string}\033[0m'
+
 def remove_punctuation(input_string: str) -> str:
     """
     Removes punctuation from input string (re module required)
