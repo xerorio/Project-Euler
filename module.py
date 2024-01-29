@@ -4,6 +4,38 @@ A nice long script with loads of useful functions and variables
 
 # functions
 
+def find_iqr(input_list: list) -> dict:
+    """
+    A function to calculate upper/lower quartiles and interquartile range
+    """
+    if all(isinstance(x, int) for x in input_list):
+        sorted_list = sorted(input_list)
+        length = len(input_list)
+        lower = (length + 1) / 4
+        if lower.is_integer():
+            lower = int(lower)
+            lower_quartile = sorted_list[lower - 1]
+            upper_quartile = sorted_list[length - lower - 1]
+        else:
+            from math import floor
+            lower_quartile_lower_bound = floor(lower)
+            lower_quartile_extra = lower - lower_quartile_lower_bound # this is always be less than one
+            lower_quartile = sorted_list[lower_quartile_lower_bound - 1]
+            lower_quartile += (sorted_list[lower_quartile_lower_bound] - lower_quartile) * lower_quartile_extra
+
+            upper = length - lower
+            upper_quartile_lower_bound = floor(upper)
+            upper_quartile_extra = upper - upper_quartile_lower_bound # this is always be less than one
+            upper_quartile = sorted_list[upper_quartile_lower_bound - 1]
+            upper_quartile += (sorted_list[upper_quartile_lower_bound] - upper_quartile) * upper_quartile_extra
+        return {
+                'lower_quartile': lower_quartile,
+                'upper_quartile': upper_quartile,
+                'interquartile_range': upper_quartile - lower_quartile
+                }
+    else:
+        return 'Invalid input list'
+
 def remove_punctuation(input_string: str) -> str:
     """
     Removes punctuation from input string (re module required)
